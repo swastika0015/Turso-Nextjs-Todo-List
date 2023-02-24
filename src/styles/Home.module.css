@@ -65,13 +65,13 @@
 }
 .todolist li{
   box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
-  padding: 3px;
+  padding: 5px;
   margin-bottom: 1rem;
   border-radius: 1rem;
   min-height: 3rem;
   font-size: 1rem;
   background-color: #FFF2F2 ;
-
+  
 }
 .outputlist{
   vertical-align: middle;
