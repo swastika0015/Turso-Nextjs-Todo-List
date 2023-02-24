@@ -63,26 +63,28 @@ export default function Home(props) {
       </Head>
       <main className={styles.main}>
         <Script src="https://kit.fontawesome.com/e986a2e970.js" crossorigin="anonymous" async></Script>
-        <h1 className={styles.heading}>Todo List</h1>
         <div className={styles.todolist}>
+        <h1 className={styles.heading}>Todo List</h1>
           <form className={styles.flexRow}>
             <input className={styles.inputTodo} type="text" placeholder='Add To-dos' value={userInput} onChange={handleChange}/>
-            <button className={styles.btn} onClick={handleSubmit}><i class="fa-solid fa-square-plus fa-2x"></i></button>
+            <button className={styles.btnAdd} onClick={handleSubmit}><i class="fa-solid fa-square-plus fa-lg"></i></button>
           </form>
 
-          <ul className={styles.inputList}>
-            <div className={styles.flexCol}>
+          
+            <div className={styles.ouputList}>
+            <ul className={styles.inputList}>
             {
               todoList.length >=1 ? todoList.map((todo) => {
-                return <li className={styles.flexRow} key={todo.id}> {todo.text}<button className={styles.btn} onClick={(e) => {
+                return <li className={styles.flexRow} key={todo.id}> {todo.text}<button className={styles.btnDel} onClick={(e) => {
                   e.preventDefault()
                   handleDelete(todo.id)
-                }}><i class="fa-solid fa-trash-can fa-2x"></i></button></li>
+                }}><i class="fa-solid fa-trash-can fa-lg"></i></button></li>
               })
               : ""
             }
+             </ul>
             </div>
-          </ul>
+         
           </div>
       </main>
     </>

@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Work+Sans:wght@300&display=swap');
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  
 }
 
 .input {
@@ -21,48 +25,83 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 1.5rem;
-  border: 1px solid grey;
+  font-size: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+  border-radius: 1rem;
+  background-color: #FFF2F2;
 }
 .flexRow input{
   border: none;
+  background-color: #FFF2F2;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  outline: none;
 }
-.flexCol{
+
+.ouputList{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-top: 1rem;
 
 }
 .todolist{
-  border: 1px solid black;
-  padding: 1rem;
-  min-width: 25em;
-  border-radius: .5rem;
-  background-color: white;
+  width: 23em;
+  border-radius: 2.5rem;
+  background-color:  #a3b7ec;
   min-height: 30em;
+  margin: 2rem;
+  padding: 2rem;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.heading{
+  text-align: center;
+  padding: 2rem;
+  margin: 0;
 }
 .todolist ul{
   padding: 0;
 }
 .todolist li{
-  border: 1px solid grey;
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
   padding: 3px;
   margin-bottom: 1rem;
-  border-radius: 2px;
-  min-height: 2rem;
+  border-radius: 1rem;
+  min-height: 3rem;
+  font-size: 1rem;
+  background-color: #FFF2F2 ;
+
 }
+.outputlist{
+  vertical-align: middle;
+  display: table-cell;
+}
+
 .inputTodo{
   min-width: 75%;
   padding: 3px;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  min-height: 3rem;
+  border-radius: 1rem;
+  background-color: #FFF2F2;
 }
 
 .inputList{
   list-style-type: none;
 }
 
-.btn{
+.btnAdd{
   background: none;
   border: none;
   cursor: pointer;
+  color: green;
 }
+.btnDel{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+
+

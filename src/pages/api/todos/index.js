@@ -18,8 +18,6 @@ export default async function handler(req, res) {
 
 		const result = serializeData(todos);
 
-
-
 		res.status(200).json({
 			data: result ? result : [],
 		});

@@ -18,16 +18,14 @@ export default async function handler(req, res) {
 		return;
 	}
 
-	const blog = await db.execute(
+	const todo = await db.execute(
 		"INSERT INTO todos (text) VALUES (?)",
 		[text]
 	);
 
-	console.log(blog)
-
-	if (blog.error) {
+	if (todo.error) {
 		res.status(500).json({
-			message: blog.error,
+			message: todo.error,
 		});
 		return;
 	}
