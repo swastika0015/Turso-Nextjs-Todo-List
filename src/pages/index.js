@@ -50,11 +50,8 @@ export default function Home(props) {
   }
 
   const handleDelete = async (id) => {
-   let isDel= confirm("Your task will be deleted")
-   if(isDel){
     await axios.post(`/api/todos/delete?id=${id}`)
     await getTodos()
-   }
   }
 
   return (
