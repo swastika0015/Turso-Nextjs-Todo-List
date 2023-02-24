@@ -1,14 +1,31 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from '@/styles/Home.module.css'
+import axios from 'axios';
 
 
-export default function Home() {
-
+export default function Home(props) {
 
 
   const [userInput, setUserInput] = useState('')
   const [todoList, settodoList] = useState([])
+
+  useEffect(() => {
+   
+    getTodos()
+  }, [])
+
+  const getTodos = async() => {
+    const {data} = await axios.get("/api/todos");
+    console.log(data)
+    settodoList(data.data)
+  }
+
+  const addTodo = async (todo) => {
+    await axios.post("/api/todos/add", {
+      text: todo
+    })
+  }
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -16,26 +33,21 @@ export default function Home() {
     setUserInput(e.target.value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
-    console.log(todoList)
-
-    settodoList([
-      userInput,
-      ...todoList
-    ])
+    await addTodo(userInput)
+    await getTodos()
 
     setUserInput('')
 
   }
 
-  const handleDelete = (todo) => {
-    const updatedArr = todoList.filter(todoItem => todoItem.indexOf(todoItem) !== todoList.indexOf(todo))
-
-    settodoList(updatedArr)
-    console.log(updatedArr)
+  const handleDelete = async (id) => {
+   await axios.post(`/api/todos/delete?id=${id}`)
+   await getTodos()
   }
+
   return (
     <>
       <Head>
@@ -55,10 +67,10 @@ export default function Home() {
           <ul className={styles.inputList}>
             <div className={styles.flexCol}>
             {
-              todoList.length >=1 ? todoList.map((todo, idx) => {
-                return <li className={styles.flexRow} key={idx}> {todo}<button className={styles.btn} onClick={(e) => {
+              todoList.length >=1 ? todoList.map((todo) => {
+                return <li className={styles.flexRow} key={todo.id}> {todo.text}<button className={styles.btn} onClick={(e) => {
                   e.preventDefault()
-                  handleDelete(todo)
+                  handleDelete(todo.id)
                 }}><i class="fa-solid fa-trash-can fa-2x"></i></button></li>
               })
               : ""
