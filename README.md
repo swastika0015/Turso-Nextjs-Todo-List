@@ -2,15 +2,11 @@
 A To-Do List app using [Turso](https://chiselstrike.com/) and [Nextjs](https://nextjs.org/)
 
 ## Setting up the Turso database
-To set up Turso, install it:
-
-## On Mac
+Installation:
 ```
+# Mac
 Brew install chiselstrike/tap/turso
-```
-
-## linux script
-```
+# linux script
 curl -sSfL https://get.tur.so/install.sh | bash
 ```
 
