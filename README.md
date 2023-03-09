@@ -5,7 +5,9 @@ Setting up the Turso database
 To set up Turso, install it:
 
 ## On Mac
+```
 Brew install chiselstrike/tap/turso
+```
 
 ## linux script
 ```
