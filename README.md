@@ -29,6 +29,7 @@ turso db show --url [DATABASE_NAME]
 ```
 
 Now, rename the .env_sample.env file to .env.
+
 Assign the database URL to the NEXT_PUBLIC_DB_URL environment variable
 
 ```
