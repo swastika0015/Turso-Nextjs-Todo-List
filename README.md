@@ -1,7 +1,7 @@
 # To-Do List App
 A To-Do List app using [Turso](https://chiselstrike.com/) and [Nextjs](https://nextjs.org/)
 
-Setting up the Turso database
+## Setting up the Turso database
 To set up Turso, install it:
 
 ## On Mac
