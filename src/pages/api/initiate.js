@@ -7,12 +7,6 @@ export default async function handler(req, res) {
 	};
 	const db = connect(config);
 
-	await db.execute(`
-	create if not exists table todos (
-	    id integer primary key AUTOINCREMENT,
-	    text varchar2 not null
-	);
-	`);
 
 	if (db) {
 		res.status(200).json({
