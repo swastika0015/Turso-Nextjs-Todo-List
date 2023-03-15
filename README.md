@@ -31,6 +31,6 @@ Now, rename the .env_sample.env file to .env.
 Assign the database URL to the NEXT_PUBLIC_DB_URL environment variable
 
 ```
-NEXT_PUBLIC_DB_URL={Long access token string} 
+NEXT_PUBLIC_DB_URL={Turso database URL} 
 ```
 
