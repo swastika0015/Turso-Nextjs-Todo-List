@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default async function handler(req, res) {
-	const { config, db } = require('../routes');
+	const { db } = require('../routes');
 
 	const { id } = req.query;
 

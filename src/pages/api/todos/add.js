@@ -2,7 +2,7 @@
 
 export default async function handler(req, res) {
 	// Create db connection
-	const { config, db } = require('../routes');
+	const { db } = require('../routes');
 
 	const { text } = req.body;
 	if (!text) {
