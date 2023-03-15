@@ -2,15 +2,12 @@
 
 import { connect } from "@libsql/client";
 
+
 export default async function handler(req, res) {
 	// Create db connection
-	const config = {
-		url: process.env.NEXT_PUBLIC_DB_URL,
-	};
-	const db = connect(config);
+	const { config, db } = require('../routes');
 
 	const { text } = req.body;
-
 	if (!text) {
 		res.status(400).json({
 			message: "Fields cannot be empty",
@@ -18,21 +15,25 @@ export default async function handler(req, res) {
 		return;
 	}
 
-	const todo = await db.execute(
-		"INSERT INTO todos (text) VALUES (?)",
-		[text]
-	);
+	// Inserting tasks in ‘todos’ table
 
-	if (todo.error) {
-		res.status(500).json({
-			message: todo.error,
-		});
-		return;
+	try {
+		// Perform the query
+		const todo = await db.execute(
+			"INSERT INTO todos (text) VALUES (?)",
+			[text]
+		);
+		// Handle valid query result
+		res.status(201).send('todo created successfully');
+
+	  } catch (err) {
+
+		// Handle query error
+		console.error(err);
+		res.status(500).send('Internal Server Error');
+	  };
 	}
 
-	res.status(201).json({
-		data: "Todo added",
-	});
 
-	return;
-}
+
+

@@ -2,10 +2,7 @@
 import { connect } from "@libsql/client";
 
 export default async function handler(req, res) {
-	const config = {
-		url: process.env.NEXT_PUBLIC_DB_URL,
-	};
-	const db = connect(config);
+	const { config, db } = require('./routes');
 
 
 	if (db) {

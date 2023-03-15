@@ -67,7 +67,7 @@ export default function Home(props) {
         <h1 className={styles.heading}>Todo List</h1>
           <form className={styles.flexRow}>
             <input className={styles.inputTodo} type="text" placeholder='Add To-dos' value={userInput} onChange={handleChange}/>
-            <button className={styles.btnAdd} onClick={handleSubmit}><i class="fa-solid fa-square-plus fa-lg"></i></button>
+            <button className={styles.btnAdd} onClick={handleSubmit}><i className="fa-solid fa-square-plus fa-lg"></i></button>
           </form>
 
           
@@ -78,7 +78,7 @@ export default function Home(props) {
                 return <li className={styles.flexRow} key={todo.id}> {todo.text}<button className={styles.btnDel} onClick={(e) => {
                   e.preventDefault()
                   handleDelete(todo.id)
-                }}><i class="fa-solid fa-trash-can fa-lg"></i></button></li>
+                }}><i className="fa-solid fa-trash-can fa-lg"></i></button></li>
               })
               : ""
             }
