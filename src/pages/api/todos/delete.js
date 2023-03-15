@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
 	try {
 		// Perform the query
-		const result = await db.execute(
+		await db.execute(
 			`
 		    DELETE FROM todos WHERE id=?
 		    `,

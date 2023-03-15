@@ -18,7 +18,6 @@ export default function Home(props) {
 
   const getTodos = async() => {
     const {data} = await axios.get("/api/todos");
-    console.log(data)
     settodoList(data.data)
   }
 
@@ -51,7 +50,7 @@ export default function Home(props) {
 
   const handleDelete = async (id) => {
     await axios.post(`/api/todos/delete`, {
-      id: id
+      id
     })
     await getTodos()
   }
