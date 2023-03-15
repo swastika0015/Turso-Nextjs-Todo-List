@@ -3,7 +3,7 @@
 export default async function handler(req, res) {
 	const { db } = require('../routes');
 
-	const { id } = req.query;
+	const { id } = req.body;
 
 	if (req.method === "POST") {
 		const todo = await db.execute(`SELECT * FROM todos WHERE id=?`, [
