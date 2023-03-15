@@ -1,9 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default async function handler(req, res) {
-	const { config, db } = require('../routes');
+	const { db } = require('../routes');
 
-	const { id } = req.query;
+	const { id } = req.body;
 
 	if (req.method === "POST") {
 		const todo = await db.execute(`SELECT * FROM todos WHERE id=?`, [
