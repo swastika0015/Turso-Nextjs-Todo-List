@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+const { db } = require('../turso');
 
 export default async function handler(req, res) {
-	const { db } = require('../routes');
 
 	const { id } = req.body;
 

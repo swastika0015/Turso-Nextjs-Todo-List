@@ -34,4 +34,5 @@ yarn-error.log*
 #env file
 .env
 
-.turso_history
+# Turso
+.turso_*
