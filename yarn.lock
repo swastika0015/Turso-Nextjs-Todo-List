@@ -43,13 +43,14 @@
   "resolved" "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   "version" "1.2.1"
 
-"@libsql/client@^0.0.5":
-  "integrity" "sha512-+c5sEbAgU8dje0QQPC9CD7WTfeUcjWpgFPjgEo4DYHWGD8KeRxX5N2XPMmu5qTbKErn2+qV9jTTQDG8JcC22zQ=="
-  "resolved" "https://registry.npmjs.org/@libsql/client/-/client-0.0.5.tgz"
-  "version" "0.0.5"
+"@libsql/client@^0.0.7":
+  "integrity" "sha512-VUi4mnuASqR8LCKwaNpqq4kzHhwAfkk5t0iVvPdIK7sHrMXpHg2UBH/KXwVlPpokSiYgudnc8Psa88xPM0qq3A=="
+  "resolved" "https://registry.npmjs.org/@libsql/client/-/client-0.0.7.tgz"
+  "version" "0.0.7"
   dependencies:
     "better-sqlite3" "^8.0.1"
     "cross-fetch" "^3.1.5"
+    "js-base64" "^3.7.5"
 
 "@next/env@13.1.6":
   "integrity" "sha512-s+W9Fdqh5MFk6ECrbnVmmAOwxKQuhGMT7xXHrkYIBMBcTiOqNWhv5KbJIboKR5STXxNXl32hllnvKaffzFaWQg=="
@@ -305,9 +306,9 @@
   "version" "1.5.1"
 
 "better-sqlite3@^8.0.1":
-  "integrity" "sha512-p1m09H+Oi8R9TPj810pdNswMFuVgRNgCJEWypp6jlkOgSwMIrNyuj3hW78xEuBRGok5RzeaUW8aBtTWF3l/TQA=="
-  "resolved" "https://registry.npmjs.org/better-sqlite3/-/better-sqlite3-8.1.0.tgz"
-  "version" "8.1.0"
+  "integrity" "sha512-8eTzxGk9535SB3oSNu0tQ6I4ZffjVCBUjKHN9QeeIFtphBX0sEd0NxAuglBNR9TO5ThnxBB7GqzfcYo9kjadJQ=="
+  "resolved" "https://registry.npmjs.org/better-sqlite3/-/better-sqlite3-8.2.0.tgz"
+  "version" "8.2.0"
   dependencies:
     "bindings" "^1.5.0"
     "prebuild-install" "^7.1.0"
@@ -1364,6 +1365,11 @@
   "resolved" "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
   "version" "2.0.0"
 
+"js-base64@^3.7.5":
+  "integrity" "sha512-3MEt5DTINKqfScXKfJFrRbxkrnk2AxPWGBL/ycjz4dK8iqiSJ06UxD8jh8xuh6p10TX4t2+7FsBYVxxQbMg+qA=="
+  "resolved" "https://registry.npmjs.org/js-base64/-/js-base64-3.7.5.tgz"
+  "version" "3.7.5"
+
 "js-sdsl@^4.1.4":
   "integrity" "sha512-mifzlm2+5nZ+lEcLJMoBK0/IH/bDg8XnJfd/Wq6IP+xoCjLZsTOnV2QpxlVbX9bMnkl5PdEjNtBJ9Cj1NjifhQ=="
   "resolved" "https://registry.npmjs.org/js-sdsl/-/js-sdsl-4.3.0.tgz"
@@ -1805,9 +1811,9 @@
     "loose-envify" "^1.1.0"
 
 "readable-stream@^3.1.1", "readable-stream@^3.4.0":
-  "integrity" "sha512-+rQmrWMYGA90yenhTYsLWAsLsqVC8osOw6PKE1HDYiO0gdPeKe/xDHNzIAIn4C91YQ6oenEhfYqqc1883qHbjQ=="
-  "resolved" "https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.1.tgz"
-  "version" "3.6.1"
+  "integrity" "sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA=="
+  "resolved" "https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.2.tgz"
+  "version" "3.6.2"
   dependencies:
     "inherits" "^2.0.3"
     "string_decoder" "^1.1.1"

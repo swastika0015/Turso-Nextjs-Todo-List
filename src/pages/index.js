@@ -50,7 +50,9 @@ export default function Home(props) {
   }
 
   const handleDelete = async (id) => {
-    await axios.post(`/api/todos/delete?id=${id}`)
+    await axios.post(`/api/todos/delete`, {
+      id: id
+    })
     await getTodos()
   }
 

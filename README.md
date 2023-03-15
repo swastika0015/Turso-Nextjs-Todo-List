@@ -4,13 +4,14 @@ A To-Do List app using [Turso](https://chiselstrike.com/) and [Nextjs](https://n
 ## Setting up the Turso database
 Installation:
 ```
-# Mac
+# On macOS or Linux with Homebrew
 Brew install chiselstrike/tap/turso
-# linux script
+
+# Manual scripted installation
 curl -sSfL https://get.tur.so/install.sh | bash
 ```
 
-Create a new Turso database:
+Create a new Turso database using CLI:
 
 ```
 turso db create [DATABASE_NAME]
@@ -31,6 +32,6 @@ Now, rename the .env_sample.env file to .env.
 Assign the database URL to the NEXT_PUBLIC_DB_URL environment variable
 
 ```
-NEXT_PUBLIC_DB_URL={Long access token string} 
+NEXT_PUBLIC_DB_URL={Turso database URL} 
 ```
 
