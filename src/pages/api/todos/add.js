@@ -1,5 +1,4 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
 const { db } = require('../turso');
 
 export default async function handler(req, res) {
@@ -7,7 +6,7 @@ export default async function handler(req, res) {
 	if (req.method !== "POST") {
 		res.status(403).json({
 			message: "Only supports POST method!"
-		})
+		});
 	}
 
 	const { text } = req.body;
@@ -19,7 +18,7 @@ export default async function handler(req, res) {
 		return;
 	}
 
-	// Inserting tasks in ‘todos’ table
+	// Inserting tasks into ‘todos’ table
 	try {
 		// Perform the query
 		await db.execute(

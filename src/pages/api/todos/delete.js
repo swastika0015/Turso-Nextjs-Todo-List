@@ -20,18 +20,18 @@ export default async function handler(req, res) {
 		// Perform the query
 		await db.execute(
 			`
-		    DELETE FROM todos WHERE id=?
-		    `,
+      DELETE FROM todos WHERE id=?
+      `,
 			[id]
 		);
 		// Handle valid query result
 		res.status(201).send('todo deleted successfully');
 
-	  } catch (err) {
+  } catch (err) {
 
-		// Handle query error
-		console.error(err);
-		res.status(500).send("Internal server error");
-	  };
+    // Handle query error
+    console.error(err);
+    res.status(500).send("Internal server error");
+  };
 
 }
