@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+const { db } = require('../turso');
 
 export default async function handler(req, res) {
-	const { db } = require('../routes');
 
 	const { id } = req.body;
 
@@ -18,20 +18,20 @@ export default async function handler(req, res) {
 
 	try {
 		// Perform the query
-		const result = await db.execute(
+		await db.execute(
 			`
-		    DELETE FROM todos WHERE id=?
-		    `,
+      DELETE FROM todos WHERE id=?
+      `,
 			[id]
 		);
 		// Handle valid query result
 		res.status(201).send('todo deleted successfully');
 
-	  } catch (err) {
+  } catch (err) {
 
-		// Handle query error
-		console.error(err);
-		res.status(500).send("Internal server error");
-	  };
+    // Handle query error
+    console.error(err);
+    res.status(500).send("Internal server error");
+  };
 
 }

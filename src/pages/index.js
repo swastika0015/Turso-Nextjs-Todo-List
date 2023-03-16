@@ -4,56 +4,52 @@ import styles from '../styles/Home.module.css'
 import axios from 'axios';
 import Script from 'next/script';
 
-
 export default function Home(props) {
 
-
-  const [userInput, setUserInput] = useState('')
-  const [todoList, settodoList] = useState([])
+  const [userInput, setUserInput] = useState('');
+  const [todoList, settodoList] = useState([]);
 
   useEffect(() => {
    
-    getTodos()
+    getTodos();
   }, [])
 
   const getTodos = async() => {
     const {data} = await axios.get("/api/todos");
-    console.log(data)
-    settodoList(data.data)
+    settodoList(data.data);
   }
-
 
   const addTodo = async (todo) => {
     if(!todo) {
-      alert("Input is empty")
-      return
+      alert("Input is empty");
+      return;
     }
     await axios.post("/api/todos/add", {
       text: todo
-    })
+    });
   }
 
   const handleChange = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setUserInput(e.target.value)
+    setUserInput(e.target.value);
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    await addTodo(userInput)
-    await getTodos()
+    await addTodo(userInput);
+    await getTodos();
 
-    setUserInput('')
+    setUserInput('');
 
   }
 
   const handleDelete = async (id) => {
     await axios.post(`/api/todos/delete`, {
-      id: id
-    })
-    await getTodos()
+      id
+    });
+    await getTodos();
   }
 
   return (
@@ -66,28 +62,29 @@ export default function Home(props) {
       <main className={styles.main}>
         <Script src="https://kit.fontawesome.com/e986a2e970.js" crossorigin="anonymous" async></Script>
         <div className={styles.todolist}>
-        <h1 className={styles.heading}>Todo List</h1>
+          <h1 className={styles.heading}>Todo List</h1>
           <form className={styles.flexRow}>
             <input className={styles.inputTodo} type="text" placeholder='Add To-dos' value={userInput} onChange={handleChange}/>
             <button className={styles.btnAdd} onClick={handleSubmit}><i className="fa-solid fa-square-plus fa-lg"></i></button>
           </form>
 
           
-            <div className={styles.ouputList}>
+          <div className={styles.ouputList}>
             <ul className={styles.inputList}>
             {
-              todoList.length >=1 ? todoList.map((todo) => {
-                return <li className={styles.flexRow} key={todo.id}> {todo.text}<button className={styles.btnDel} onClick={(e) => {
-                  e.preventDefault()
-                  handleDelete(todo.id)
-                }}><i className="fa-solid fa-trash-can fa-lg"></i></button></li>
-              })
+              todoList.length >=1
+              ? todoList.map((todo) => {
+                  return <li className={styles.flexRow} key={todo.id}> {todo.text}<button className={styles.btnDel} onClick={(e) => {
+                    e.preventDefault()
+                    handleDelete(todo.id)
+                  }}><i className="fa-solid fa-trash-can fa-lg"></i></button></li>
+                })
               : ""
             }
-             </ul>
-            </div>
-         
+            </ul>
           </div>
+         
+        </div>
       </main>
     </>
   )
