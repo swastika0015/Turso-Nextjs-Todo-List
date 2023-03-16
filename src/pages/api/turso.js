@@ -1,6 +1,4 @@
-import {
-  createClient
-} from "@libsql/client";
+import { createClient } from "@libsql/client";
 
 const config = {
   url: process.env.NEXT_PUBLIC_DB_URL,
