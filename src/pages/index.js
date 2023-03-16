@@ -9,8 +9,7 @@ export default function Home(props) {
   const [userInput, setUserInput] = useState('');
   const [todoList, settodoList] = useState([]);
 
-  useEffect(() => {
-   
+  useEffect(() => {   
     getTodos();
   }, [])
 
@@ -42,7 +41,6 @@ export default function Home(props) {
     await getTodos();
 
     setUserInput('');
-
   }
 
   const handleDelete = async (id) => {
@@ -83,7 +81,6 @@ export default function Home(props) {
             }
             </ul>
           </div>
-         
         </div>
       </main>
     </>

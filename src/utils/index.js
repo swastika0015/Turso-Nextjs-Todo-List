@@ -1,5 +1,8 @@
 export const serializeData = (data) => {
-	const { columns, rows } = data;
+	const {
+		columns,
+		rows
+	} = data;
 
 	if (!rows || !columns) return null;
 

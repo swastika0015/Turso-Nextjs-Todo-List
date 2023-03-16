@@ -6,7 +6,7 @@
   align-items: center;
   font-family: 'Poppins', sans-serif;
   font-family: 'Work Sans', sans-serif;
-  
+
 }
 
 .input {
@@ -21,7 +21,7 @@
   outline: none;
 }
 
-.flexRow{
+.flexRow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -30,7 +30,8 @@
   border-radius: 1rem;
   background-color: #FFF2F2;
 }
-.flexRow input{
+
+.flexRow input {
   border: none;
   background-color: #FFF2F2;
   font-family: 'Poppins', sans-serif;
@@ -38,47 +39,52 @@
   outline: none;
 }
 
-.ouputList{
+.ouputList {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 1rem;
 
 }
-.todolist{
+
+.todolist {
   width: 23em;
   border-radius: 2.5rem;
-  background-color:  #a3b7ec;
+  background-color: #a3b7ec;
   min-height: 30em;
   margin: 2rem;
   padding: 2rem;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.heading{
+
+.heading {
   text-align: center;
   padding: 2rem;
   margin: 0;
 }
-.todolist ul{
+
+.todolist ul {
   padding: 0;
 }
-.todolist li{
+
+.todolist li {
   box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
   padding: 5px;
   margin-bottom: 1rem;
   border-radius: 1rem;
   min-height: 3rem;
   font-size: 1rem;
-  background-color: #FFF2F2 ;
-  
+  background-color: #FFF2F2;
+
 }
-.outputlist{
+
+.outputlist {
   vertical-align: middle;
   display: table-cell;
 }
 
-.inputTodo{
+.inputTodo {
   min-width: 75%;
   padding: 3px;
   font-size: 1rem;
@@ -87,21 +93,20 @@
   background-color: #FFF2F2;
 }
 
-.inputList{
+.inputList {
   list-style-type: none;
 }
 
-.btnAdd{
+.btnAdd {
   background: none;
   border: none;
   cursor: pointer;
   color: green;
 }
-.btnDel{
+
+.btnDel {
   background: none;
   border: none;
   cursor: pointer;
   color: red;
 }
-
-
