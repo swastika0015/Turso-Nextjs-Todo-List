@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const { db } = require('../turso');
+
+import { db } from '../turso'
 
 export default async function handler(req, res) {
 
@@ -15,7 +16,9 @@ export default async function handler(req, res) {
 	]);
 
 	if (todo.rows?.length === 0) {
-		res.status(400).json({ message: "Unable to find todo" });
+		res.status(400).json({ 
+			message: "Unable to find todo" 
+		});
 		return;
 	}
 
@@ -31,7 +34,6 @@ export default async function handler(req, res) {
 		res.status(201).send('todo deleted successfully');
 	} catch (err) {
 		// Handle query error
-		console.error(err);
 		res.status(500).send("Internal server error");
 	};
 }

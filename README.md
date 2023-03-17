@@ -97,3 +97,6 @@ Note: during dev mode, Vite may request a significant number of `.js` files. Thi
 The production build will generate client and server modules by running both client and server build commands. Additionally, the build command will use Typescript to run a type check on the source code.
 
 npm run build # or `yarn build`
+
+# License
+This code is open sourced under the [MIT license](https://en.wikipedia.org/wiki/MIT_License).

@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { serializeData } from "../../../utils";
-const { db } = require('../turso');
+import { db } from '../turso'
 
 export default async function handler(req, res) {
 

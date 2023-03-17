@@ -7,6 +7,5 @@ const config = {
 const db = createClient(config);
 
 module.exports = {
-  config,
-  db,
+  db
 };

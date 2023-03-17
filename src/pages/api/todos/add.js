@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const { db } = require("../turso");
+import { db } from '../turso'
 
 export default async function handler(req, res) {
   
   if (req.method !== "POST") {
-    res.status(403).json({
+    return res.status(403).json({
       message: "Only supports POST method!",
     });
   }
